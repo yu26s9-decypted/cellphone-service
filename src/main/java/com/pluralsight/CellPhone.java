@@ -32,37 +32,52 @@ public class CellPhone {
         this.serialNumber = serialNumber;
     }
 
+//    public void dial(String phoneNumberToDial){
+//        System.out.println(owner +"'s phone is dialing the number " + phoneNumberToDial);
+//        System.out.println("ring ring!");
+//    }
+
+    public String dial(String phoneNumberToDial) {
+        return getOwner() + "'s phone is dialing the number " + phoneNumberToDial;
+    }
+
+    public CellPhone(String owner, String phoneNumber){
+        this.owner = owner;
+        this.phoneNumber = phoneNumber;
+    }
+
+    public void dial(CellPhone phone){
+        dial(phone.getPhoneNumber());
+    }
 
 
     public String getModel(){
         return model;
     }
-
-
+    public void setModel(String model){
+        this.model = model;
+    }
 
     public String getCarrier(){
         return carrier;
-    }
-
-    public String getPhoneNumber(){
-        return phoneNumber;
-    }
-
-    public String getOwner(){
-        return owner;
-    }
-
-
-    public void setModel(String model){
-        this.model = model;
     }
 
     public void setCarrier(String carrier){
         this.carrier = carrier;
     }
 
+    public String getPhoneNumber(){
+        return phoneNumber;
+    }
     public void setPhoneNumber(String phoneNumber){
         this.phoneNumber = phoneNumber;
+    }
+
+
+
+
+    public String getOwner(){
+        return owner;
     }
 
     public void setOwner(String owner){

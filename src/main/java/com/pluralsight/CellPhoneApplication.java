@@ -35,14 +35,15 @@ public class CellPhoneApplication {
         String newCellCarrier = newRegistration.getCarrier();
         String newCellPhoneNumber = newRegistration.getPhoneNumber();
         String newCellOwner = newRegistration.getOwner();
+        CellPhone otherCellPhone = new CellPhone("Matt", "828-832-2314");
+        displayCellPhone(newRegistration);
+        displayCellPhone(otherCellPhone);
+
+        System.out.println(newRegistration.dial(otherCellPhone.getPhoneNumber()));
+        System.out.println(otherCellPhone.dial(newRegistration.getPhoneNumber()));
 
 
 
-        System.out.printf("\n  Cell Serial Number: %d", newCellSerial);
-        System.out.printf("\n  Cell Model: %s", newCellModel);
-        System.out.printf("\n  Cell Carrier: %s", newCellCarrier);
-        System.out.printf("\n  Cell Phone Number: %s", newCellPhoneNumber);
-        System.out.printf("\n  Cell Owner: %s", newCellOwner);
     }
 
 
@@ -59,6 +60,14 @@ public class CellPhoneApplication {
         System.out.println(prompt);
         return scanner.nextLine();
 
+    }
+
+    public static void displayCellPhone(CellPhone cellPhone){
+        System.out.printf("\n  Cell Serial Number: %d", cellPhone.getCellSerial());
+        System.out.printf("\n  Cell Model: %s", cellPhone.getModel());
+        System.out.printf("\n  Cell Carrier: %s", cellPhone.getCarrier());
+        System.out.printf("\n  Cell Phone Number: %s", cellPhone.getPhoneNumber());
+        System.out.printf("\n  Cell Owner: %s", cellPhone.getOwner() + "\n");
     }
 }
 
